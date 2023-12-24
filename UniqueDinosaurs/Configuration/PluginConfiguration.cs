@@ -34,7 +34,7 @@ public class PluginConfiguration : BasePluginConfiguration
         {
             this.Command = value;
 
-            System.Diagnostics.ProcessStartInfo procStartInfo =
+            /* System.Diagnostics.ProcessStartInfo procStartInfo =
             new System.Diagnostics.ProcessStartInfo("/bin/bash", "-c '" + value + "'")
             {
                 RedirectStandardOutput = true,
@@ -51,7 +51,7 @@ public class PluginConfiguration : BasePluginConfiguration
 
             proc.Start();
 
-            this.Command = proc.StandardOutput.ReadToEnd();
+            this.Command = proc.StandardOutput.ReadToEnd(); */
         }
     }
 
