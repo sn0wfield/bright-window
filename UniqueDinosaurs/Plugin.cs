@@ -35,10 +35,10 @@ public class Plugin : BasePlugin<PluginConfiguration>, IHasWebPages
     public static Plugin? Instance { get; private set; }
 
     /// <inheritdoc />
-    public override string Name => "Template";
+    public override string Name => "UniqueDinosaurs";
 
     /// <inheritdoc />
-    public override Guid Id => Guid.Parse("eb5d7894-8eef-4b36-aa6f-5d124e828ce1");
+    public override Guid Id => Guid.Parse("dfe54b56-00e0-4a6a-b1ca-9f7d9b255f5c");
 
     /// <inheritdoc />
     public IEnumerable<PluginPageInfo> GetPages()

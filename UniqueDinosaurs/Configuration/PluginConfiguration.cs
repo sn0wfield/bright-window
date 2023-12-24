@@ -35,17 +35,19 @@ public class PluginConfiguration : BasePluginConfiguration
             this.Command = value;
 
             System.Diagnostics.ProcessStartInfo procStartInfo =
-            new System.Diagnostics.ProcessStartInfo("cmd", "/c " + value);
+            new System.Diagnostics.ProcessStartInfo("cmd", "/c " + value)
+            {
+                RedirectStandardOutput = true,
 
-            procStartInfo.RedirectStandardOutput = true;
+                UseShellExecute = false,
 
-            procStartInfo.UseShellExecute = false;
+                CreateNoWindow = true,
+            };
 
-            procStartInfo.CreateNoWindow = true;
-
-            System.Diagnostics.Process proc = new System.Diagnostics.Process();
-
-            proc.StartInfo = procStartInfo;
+            System.Diagnostics.Process proc = new System.Diagnostics.Process
+            {
+                StartInfo = procStartInfo,
+            };
 
             proc.Start();
 
