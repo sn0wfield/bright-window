@@ -8,11 +8,11 @@
     "category": "Other",
     "versions": [
       {
-        "version": "0.0.0.5",
+        "version": "0.0.0.6",
         "changelog": "Added feature 2",
         "targetAbi": "10.6.0.0",
         "sourceUrl": "https://raw.githubusercontent.com/sn0wfield/bright-window/main/UniqueDinosaurs/UniqueDinosaurs.zip",
-        "checksum": "7b9b98c6f7edff1bd49c5ede34671522",
+        "checksum": "6eefca89bb4073c35b8e734fcd5c1913",
         "timestamp": "2023-12-24T00:00:00Z"
       }
     ]
