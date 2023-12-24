@@ -1,6 +1,6 @@
 [
   {
-    "guid": "dfe54b56-00e0-4a6a-b1ca-9f7d9b255f5b",
+    "guid": "dfe54b56-00e0-4a6a-b1ca-9f7d9b255f5c",
     "name": "UniqueDinosaurs",
     "overview": "Test plugin",
     "description": "Test plugin.",
@@ -9,10 +9,10 @@
     "versions": [
       {
         "version": "0.0.0.2",
-        "changelog": "New plugin",
+        "changelog": "Added feature",
         "targetAbi": "10.6.0.0",
         "sourceUrl": "https://raw.githubusercontent.com/sn0wfield/bright-window/main/UniqueDinosaurs/UniqueDinosaurs.zip",
-        "checksum": "21ad24210bc3428748ee5da134e2c2d9",
+        "checksum": "3a4bf3b5df093af12dcdf40069e5477d",
         "timestamp": "2023-12-24T00:00:00Z"
       }
     ]
