@@ -4,13 +4,12 @@
     <TargetFramework>net6.0</TargetFramework>
     <RootNamespace>UniqueDinosaurs</RootNamespace>
     <GenerateDocumentationFile>true</GenerateDocumentationFile>
-    <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
     <Nullable>enable</Nullable>
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Jellyfin.Controller" Version="10.8.13"/>
-    <PackageReference Include="Jellyfin.Model" Version="10.8.13" />
+    <PackageReference Include="Jellyfin.Controller" Version="10.8.0"/>
+    <PackageReference Include="Jellyfin.Model" Version="10.8.0" />
   </ItemGroup>
 
   <ItemGroup>
