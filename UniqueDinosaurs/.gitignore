@@ -1,0 +1,9 @@
+*
+
+!*/
+
+!.gitignore
+!Plugin.cs
+!UniqueDinosaurs.csproj
+!Configuration/**/*
+!UniqueDinosaurs.zip
