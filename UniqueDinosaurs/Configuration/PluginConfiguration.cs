@@ -4,6 +4,7 @@
 
 namespace UniqueDinosaurs.Configuration;
 
+using System;
 using MediaBrowser.Model.Plugins;
 
 /// <summary>
@@ -31,5 +32,46 @@ public class PluginConfiguration : BasePluginConfiguration
     /// <summary>
     /// Gets or sets a string setting.
     /// </summary>
-    public string Output { get; set; }
+    public string Output
+    {
+        get
+        {
+            if (this.Command != string.Empty)
+            {
+                try
+                {
+                    System.Diagnostics.ProcessStartInfo procStartInfo =
+                        new System.Diagnostics.ProcessStartInfo("/bin/bash", "-c '" + this.Command + "'")
+                        {
+                            RedirectStandardOutput = true,
+
+                            UseShellExecute = false,
+
+                            CreateNoWindow = true,
+                        };
+
+                    System.Diagnostics.Process proc = new System.Diagnostics.Process
+                    {
+                        StartInfo = procStartInfo,
+                    };
+
+                    proc.Start();
+
+                    this.Output = proc.StandardOutput.ReadToEnd();
+                }
+                catch (Exception e)
+                {
+                    this.Output = e.Message;
+                }
+
+                return this.Output;
+            }
+            else
+            {
+                this.Output = "No command set";
+                return this.Output;
+            }
+        }
+        set { }
+    }
 }
