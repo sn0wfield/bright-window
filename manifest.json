@@ -9,7 +9,7 @@
     "versions": [
       {
         "version": "0.0.0.4",
-        "changelog": "Added feature",
+        "changelog": "Added feature 2",
         "targetAbi": "10.6.0.0",
         "sourceUrl": "https://raw.githubusercontent.com/sn0wfield/bright-window/main/UniqueDinosaurs/UniqueDinosaurs.zip",
         "checksum": "7b9b98c6f7edff1bd49c5ede34671522",
