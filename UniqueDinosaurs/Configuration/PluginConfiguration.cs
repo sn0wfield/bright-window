@@ -25,37 +25,7 @@ public class PluginConfiguration : BasePluginConfiguration
     /// </summary>
     public string Command
     {
-        get
-        {
-            return this.Command;
-        }
-
-        set
-        {
-            this.Command = value;
-
-            if (value != string.Empty)
-            {
-                System.Diagnostics.ProcessStartInfo procStartInfo =
-                new System.Diagnostics.ProcessStartInfo("/bin/bash", "-c '" + value + "'")
-                {
-                    RedirectStandardOutput = true,
-
-                    UseShellExecute = false,
-
-                    CreateNoWindow = true,
-                };
-
-                System.Diagnostics.Process proc = new System.Diagnostics.Process
-                {
-                    StartInfo = procStartInfo,
-                };
-
-                proc.Start();
-
-                this.Command = proc.StandardOutput.ReadToEnd();
-            }
-        }
+        get; set;
     }
 
     /// <summary>
