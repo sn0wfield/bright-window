@@ -10,6 +10,11 @@
             <div class="content-primary">
                 <form id="TemplateConfigForm">
                     <div class="inputContainer">
+                        <label class="inputLabel inputLabelUnfocused" for="Program">Program</label>
+                        <input id="Program" name="Program" type="text" is="emby-input" />
+                        <div class="fieldDescription">The program to run</div>
+                    </div>
+                    <div class="inputContainer">
                         <label class="inputLabel inputLabelUnfocused" for="Command">Command</label>
                         <input id="Command" name="Command" type="text" is="emby-input" />
                         <div class="fieldDescription">The command to run</div>
@@ -35,6 +40,7 @@
                     Dashboard.showLoadingMsg();
                     ApiClient.getPluginConfiguration(TemplateConfig.pluginUniqueId).then(function (config) {
                         document.querySelector('#Command').value = config.Command;
+                        document.querySelector('#Program').value = config.Program;
                         document.querySelector('#Output').value = config.Output;
                         Dashboard.hideLoadingMsg();
                     });
@@ -45,8 +51,17 @@
                 Dashboard.showLoadingMsg();
                 ApiClient.getPluginConfiguration(TemplateConfig.pluginUniqueId).then(function (config) {
                     config.Command = document.querySelector('#Command').value;
+                    config.Program = document.querySelector('#Program').value;
                     ApiClient.updatePluginConfiguration(TemplateConfig.pluginUniqueId, config).then(function (result) {
                         Dashboard.processPluginConfigurationUpdateResult(result);
+                    
+                        Dashboard.showLoadingMsg();
+                        ApiClient.getPluginConfiguration(TemplateConfig.pluginUniqueId).then(function (config) {
+                            document.querySelector('#Command').value = config.Command;
+                            document.querySelector('#Program').value = config.Program;
+                            document.querySelector('#Output').value = config.Output;
+                            Dashboard.hideLoadingMsg();
+                        });
                     });
                 });
 
